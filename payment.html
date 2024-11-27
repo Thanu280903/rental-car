@@ -1,0 +1,39 @@
+payment: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Method</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Payment Method</h3>
+    <form id="paymentForm" class="card">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" class="form-control" placeholder="Enter card number" required>
+      </div>
+      <div class="form-group">
+        <label for="expiry">Expiration Date</label>
+        <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" class="form-control" placeholder="CVC" required>
+      </div>
+      <button type="submit" class="btn">Pay</button>
+    </form>
+    <div id="message" class="alert" style="display: none;">Registered!</div>
+</div>
+
+<script>
+  document.getElementById('paymentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Display the "Registered" message
+    const message = document.getElementById('message');
+    message.style.display = 'block';
+  });
+</script>
+</body>
+</html>
